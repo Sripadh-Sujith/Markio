@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  margin: 0;
+}
+
+/* Put preview styles in a layer ABOVE Tailwind base to avoid conflicts */
+@layer utilities {
+  .preview h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .preview h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .preview h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .preview p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .preview blockquote {
+    border-left: 4px solid #888;
+    padding-left: 1rem;
+    color: #666;
+    font-style: italic;
+    margin: 1rem 0;
+  }
+
+  .preview ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .preview ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .preview code {
+    background: #222;
+    color: #f5f5f5;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: var(--font-mono, monospace);
+  }
+
+  .preview pre {
+    background: #1e1e1e;
+    color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: var(--font-mono, monospace);
+  }
+}
