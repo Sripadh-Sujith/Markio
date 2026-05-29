@@ -8,10 +8,10 @@ function page() {
   const [markdown,setmarkdown]=useState('')
 
   const h1=()=>{
-    setmarkdown((prev)=>prev+'\n#')
+    setmarkdown((prev)=>prev+'\n# ')
   }
   const h2=()=>{
-    setmarkdown((prev)=>prev+'\n##')
+    setmarkdown((prev)=>prev+'\n## ')
   }
     const bold=()=>{
     setmarkdown((prev)=>prev+'****')
@@ -89,7 +89,7 @@ const Source=()=>{
         
           <textarea
           value={markdown}
-            className="w-full h-[90%] bg-zinc-900 rounded-xl p-4 outline-none resize-none"
+            className="w-full h-[90%]  rounded-xl p-4 outline-none resize-none"
             placeholder="Write markdown here..."
             onChange={(e)=>setmarkdown(e.target.value)
             
